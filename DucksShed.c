@@ -6,10 +6,10 @@ int needs(int ducks, int max) {
 	bool completed = false;
 	while (!completed) {
 		sheds++;
-		if (ducks < max) {
+		if (ducks <= max) {
 			completed = true;
 		}
-		ducks = max - ducks;
+		ducks = ducks - max;
 	}
 	return sheds;
 }
