@@ -2,22 +2,25 @@
 #include <stdbool.h>
 
 int needs(int ducks, int max) {
-	int shed, j;
-	shed = 0;
+	int sheds = 0;
 	bool completed = false;
 	while (!completed) {
-		shed++;
+		sheds++;
 		if (ducks < max) {
 			completed = true;
 		}
 		ducks = max - ducks;
 	}
-	return shed;
+	return sheds;
 }
 
 int main() {
-	int n_ducks, shed;
+	int n_ducks, sheds;
 	scanf("%d", &n_ducks);
-	shed = needs(n_ducks, 30);
-	printf("%d", shed);
+	if(n_ducks <= 0) {
+		printf("invalid");
+	} else {
+		sheds = needs(n_ducks, 30);
+		printf("%d", sheds);	
+	}
 }
